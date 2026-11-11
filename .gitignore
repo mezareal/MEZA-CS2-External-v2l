@@ -1,0 +1,43 @@
+# Visual Studio and generated build output
+.agent/
+.vs/
+.vsbuild/
+dist/
+out/
+/x64/
+work/
+
+# Local runtime state, credentials, and diagnostic material
+config.ini
+*_diagnostics.txt
+*.dmp
+*.userprefs
+*.user
+*.suo
+
+# Unused legacy SDK checkout
+third_party/
+
+# Generated build and release artifacts
+Release/
+Archive/
+*.exe
+*.dll
+*.pdb
+*.map
+*.obj
+*.iobj
+*.ipdb
+
+# OS/editor files
+Thumbs.db
+.DS_Store
+*.tmp
+*.log
+
+# Private authentication code and local secret material
+keyauth/
+.env
+.env.*
+*.key
+*.secret

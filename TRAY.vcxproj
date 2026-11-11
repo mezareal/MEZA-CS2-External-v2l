@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{3EF50318-EE32-4A23-90FC-BD2731227662}</ProjectGuid>
+    <RootNamespace>MEZA</RootNamespace>
+    <ProjectName>MEZA</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <TargetName>MEZA</TargetName>
+    <OutDir>$(SolutionDir)dist\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir).vsbuild\MEZA\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(ProjectDir)packages\Microsoft.DXSDK.D3DX.9.29.952.8\build\native\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <!-- Standard exploit mitigations; not anti-debugging or anti-analysis. -->
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <AdditionalOptions>/GS /guard:cf %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)packages\Microsoft.DXSDK.D3DX.9.29.952.8\build\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableUAC>true</EnableUAC>
+      <UACExecutionLevel>requireAdministrator</UACExecutionLevel>
+      <UACUIAccess>false</UACUIAccess>
+      <!-- Keep PDB on the developer machine for post-release crash diagnosis;
+           it is explicitly excluded by the public release packager. -->
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)MEZA.map</MapFileName>
+      <AdditionalOptions>/GUARD:CF /DYNAMICBASE /HIGHENTROPYVA /NXCOMPAT %(AdditionalOptions)</AdditionalOptions>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)packages\Microsoft.DXSDK.D3DX.9.29.952.8\build\native\release\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dwmapi.lib;user32.lib;gdi32.lib;gdiplus.lib;msimg32.lib;psapi.lib;Shlwapi.lib;winhttp.lib;crypt32.lib;bcrypt.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="injector\injector.cpp" />
+
+    <ClCompile Include="esp\esp.cpp" />
+    <ClCompile Include="dx_renderer\dx_renderer.cpp" />
+    <ClCompile Include="dx_overlay\dx_overlay.cpp" />
+    <ClCompile Include="aim\aim.cpp" />
+    <ClCompile Include="cs2_sdk\cs2_sdk.cpp" />
+    <ClCompile Include="memory_manager\memory_manager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="esp\esp.h" />
+    <ClInclude Include="open_auth\open_auth_gate.h" />
+    <ClInclude Include="ui\glass_style.h" />
+    <ClInclude Include="dx_renderer\dx_renderer.h" />
+    <ClInclude Include="dx_overlay\dx_overlay.h" />
+    <ClInclude Include="aim\aim.h" />
+    <ClInclude Include="cs2_sdk\cs2_sdk.h" />
+    <ClInclude Include="memory_manager\memory_manager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\meza.ico" />
+    <None Include="assets\nemesis_logo.png" />
+    <None Include="assets\cs2_banner.png" />
+    <None Include="assets\operator_preview.png" />
+    <None Include="assets\tray_cat_logo.png" />
+    <None Include="assets\meza_logo.png" />
+    <None Include="assets\meza_logo_animated.gif" />
+    <None Include="config.example.ini" />
+    <None Include="CMakeLists.txt" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <PostBuildEvent>
+      <Command>copy /Y "$(ProjectDir)packages\Microsoft.DXSDK.D3DX.9.29.952.8\build\native\release\bin\x64\D3DX9_43.dll" "$(TargetDir)D3DX9_43.dll" &gt;nul 2&gt;nul
+copy /Y "$(ProjectDir)packages\Microsoft.DXSDK.D3DX.9.29.952.8\build\native\release\bin\x64\D3DCompiler_43.dll" "$(TargetDir)D3DCompiler_43.dll" &gt;nul 2&gt;nul
+if not exist "$(TargetDir)config.ini" copy /Y "$(ProjectDir)config.example.ini" "$(TargetDir)config.ini" &gt;nul 2&gt;nul
+exit /b 0</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

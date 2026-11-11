@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ESP"><UniqueIdentifier>{3E30CE90}-C5B1-D89A-E09B-7D4C73D8E172</UniqueIdentifier></Filter>
+    <Filter Include="Rendering"><UniqueIdentifier>{A6E8F9AE}-D2AC-6481-DC25-A18A33342D03</UniqueIdentifier></Filter>
+    <Filter Include="Overlay"><UniqueIdentifier>{6B551379}-C3C0-B593-26AB-DAF3B4395BD3</UniqueIdentifier></Filter>
+    <Filter Include="SDK"><UniqueIdentifier>{F20E3C5E}-54C0-AB3D-375D-660B3F896F6A</UniqueIdentifier></Filter>
+    <Filter Include="Memory"><UniqueIdentifier>{4789F232}-83B3-A61F-858B-641A1BEF19A3</UniqueIdentifier></Filter>
+    <Filter Include="Assets"><UniqueIdentifier>{9AEDEAF1}-F77B-8642-ABE5-28503B8C5DE8</UniqueIdentifier></Filter>
+    <Filter Include="Build"><UniqueIdentifier>{C74C1F42}-F141-C011-CA6B-D8B1114FC3D0</UniqueIdentifier></Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp"/>
+    <ClCompile Include="esp\esp.cpp"><Filter>ESP</Filter></ClCompile>
+    <ClCompile Include="dx_renderer\dx_renderer.cpp"><Filter>Rendering</Filter></ClCompile>
+    <ClCompile Include="dx_overlay\dx_overlay.cpp"><Filter>Overlay</Filter></ClCompile>
+    <ClCompile Include="aim\aim.cpp"><Filter>ESP</Filter></ClCompile>
+    <ClCompile Include="cs2_sdk\cs2_sdk.cpp"><Filter>SDK</Filter></ClCompile>
+    <ClCompile Include="memory_manager\memory_manager.cpp"><Filter>Memory</Filter></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="esp\esp.h"><Filter>ESP</Filter></ClInclude>
+    <ClInclude Include="dx_renderer\dx_renderer.h"><Filter>Rendering</Filter></ClInclude>
+    <ClInclude Include="dx_overlay\dx_overlay.h"><Filter>Overlay</Filter></ClInclude>
+    <ClInclude Include="aim\aim.h"><Filter>ESP</Filter></ClInclude>
+    <ClInclude Include="cs2_sdk\cs2_sdk.h"><Filter>SDK</Filter></ClInclude>
+    <ClInclude Include="memory_manager\memory_manager.h"><Filter>Memory</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\meza.ico"><Filter>Assets</Filter></None>
+    <None Include="assets\nemesis_logo.png"><Filter>Assets</Filter></None>
+    <None Include="assets\operator_preview.png"><Filter>Assets</Filter></None>
+    <None Include="assets\tray_cat_logo.png"><Filter>Assets</Filter></None>
+    <None Include="assets\meza_logo.png"><Filter>Assets</Filter></None>
+    <None Include="assets\meza_logo_animated.gif"><Filter>Assets</Filter></None>
+    <None Include="config.example.ini"><Filter>Build</Filter></None>
+    <None Include="CMakeLists.txt"><Filter>Build</Filter></None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="open_auth\open_auth_gate.h" />
+    <ClInclude Include="ui\glass_style.h" />
+  </ItemGroup>
+</Project>

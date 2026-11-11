@@ -1,0 +1,41 @@
+1 ICON "assets/meza.ico"
+101 RCDATA "assets/operator_preview.png"
+
+102 RCDATA "assets/airglass_mountains.png"
+103 RCDATA "assets/nemesis_airglass_logo.png"
+120 RCDATA "assets/cs2_banner.png"
+121 RCDATA "assets/tray_cat_logo.png"
+122 RCDATA "assets/meza_logo.png"
+110 RCDATA "assets/airglass_page_0.png"
+111 RCDATA "assets/airglass_page_1.png"
+112 RCDATA "assets/airglass_page_2.png"
+113 RCDATA "assets/airglass_page_3.png"
+
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x0L
+FILEOS 0x40004L
+FILETYPE 0x1L
+FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "MEZA Systems"
+            VALUE "FileDescription", "MEZA - Native Control Center"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "MEZA.exe"
+            VALUE "LegalCopyright", "Copyright (C) 2026 MEZA Systems. All rights reserved."
+            VALUE "OriginalFilename", "MEZA.exe"
+            VALUE "ProductName", "MEZA"
+            VALUE "ProductVersion", "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

@@ -5,12 +5,14 @@
     <Filter Include="Rendering"><UniqueIdentifier>{A6E8F9AE}-D2AC-6481-DC25-A18A33342D03</UniqueIdentifier></Filter>
     <Filter Include="Overlay"><UniqueIdentifier>{6B551379}-C3C0-B593-26AB-DAF3B4395BD3</UniqueIdentifier></Filter>
     <Filter Include="SDK"><UniqueIdentifier>{F20E3C5E}-54C0-AB3D-375D-660B3F896F6A</UniqueIdentifier></Filter>
-    <Filter Include="Memory"><UniqueIdentifier>{4789F232}-83B3-A61F-858B-641A1BEF19A3</UniqueIdentifier></Filter>
+    <Filter Include="Memory"><UniqueIdentifier>{4789F232-83B3-A61F-858B-641A1BEF19A3}</UniqueIdentifier></Filter>
+    <Filter Include="Runtime"><UniqueIdentifier>{B8F0B78D-55B2-45BF-9BCE-41D164E4DC38}</UniqueIdentifier></Filter>
     <Filter Include="Assets"><UniqueIdentifier>{9AEDEAF1}-F77B-8642-ABE5-28503B8C5DE8</UniqueIdentifier></Filter>
     <Filter Include="Build"><UniqueIdentifier>{C74C1F42}-F141-C011-CA6B-D8B1114FC3D0</UniqueIdentifier></Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp"/>
+    <ClCompile Include="injector\injector.cpp"><Filter>Runtime</Filter></ClCompile>
     <ClCompile Include="esp\esp.cpp"><Filter>ESP</Filter></ClCompile>
     <ClCompile Include="dx_renderer\dx_renderer.cpp"><Filter>Rendering</Filter></ClCompile>
     <ClCompile Include="dx_overlay\dx_overlay.cpp"><Filter>Overlay</Filter></ClCompile>
@@ -19,6 +21,7 @@
     <ClCompile Include="memory_manager\memory_manager.cpp"><Filter>Memory</Filter></ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="injector\injector.h"><Filter>Runtime</Filter></ClInclude>
     <ClInclude Include="esp\esp.h"><Filter>ESP</Filter></ClInclude>
     <ClInclude Include="dx_renderer\dx_renderer.h"><Filter>Rendering</Filter></ClInclude>
     <ClInclude Include="dx_overlay\dx_overlay.h"><Filter>Overlay</Filter></ClInclude>

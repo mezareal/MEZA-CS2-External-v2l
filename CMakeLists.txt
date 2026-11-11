@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 if(NOT WIN32)
-    message(FATAL_ERROR "TRAY requires Windows and Visual Studio C++ tools.")
+    message(FATAL_ERROR "MEZA Open Source requires Windows and Visual Studio C++ tools.")
 endif()
 project(MEZA_OpenSource LANGUAGES CXX RC)
 
@@ -22,6 +22,7 @@ endforeach()
 
 add_executable(MEZA_OpenSource WIN32
     main.cpp resources.rc
+    injector/injector.cpp
     cs2_sdk/cs2_sdk.cpp
     dx_overlay/dx_overlay.cpp
     dx_renderer/dx_renderer.cpp

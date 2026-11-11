@@ -27,6 +27,16 @@ from the Windows UI and rendering architecture.
 - A safe `config.example.ini` template
 - A custom MEZA Windows application icon
 
+## Project layout
+
+| Path | Purpose |
+| --- | --- |
+| `main.cpp` | Native application entry point, configuration flow, and menu state. |
+| `dx_renderer/`, `dx_overlay/` | DirectX rendering and transparent-window presentation. |
+| `ui/` | Reusable MEZA visual chrome and GDI+ helpers. |
+| `assets/`, `fonts/` | Embedded imagery, application icon, and typography resources. |
+| `open_auth/` | Explicit public authentication boundary with no private provider data. |
+
 ## Intentionally excluded
 
 This public package does **not** contain private authentication code,

@@ -31,7 +31,7 @@
 #include "aim/aim.h"
 #include "memory_manager/memory_manager.h"
 #include "open_auth/open_auth_gate.h"
-#include "ui/glass_style.h"
+#include "ui/access_chrome.h"
 
 namespace {
     class scoped_handle {

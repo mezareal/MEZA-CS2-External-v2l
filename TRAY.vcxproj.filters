@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="open_auth\open_auth_gate.h" />
+    <ClInclude Include="ui\access_chrome.h" />
     <ClInclude Include="ui\glass_style.h" />
   </ItemGroup>
 </Project>

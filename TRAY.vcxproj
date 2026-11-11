@@ -82,6 +82,7 @@
   <ItemGroup>
     <ClInclude Include="esp\esp.h" />
     <ClInclude Include="open_auth\open_auth_gate.h" />
+    <ClInclude Include="ui\access_chrome.h" />
     <ClInclude Include="ui\glass_style.h" />
     <ClInclude Include="dx_renderer\dx_renderer.h" />
     <ClInclude Include="dx_overlay\dx_overlay.h" />

@@ -1,29 +1,64 @@
-# MEZA Open Source
+<p align="center">
+  <img src="assets/github-banner.png" alt="MEZA" width="960" />
+</p>
 
-This folder is a GitHub-ready source package for the MEZA native Windows UI,
-rendering, configuration, and build setup.
+<p align="center">
+  Native Windows UI, rendering, configuration, and build-source package.
+  <br />
+  <a href="https://discord.gg/meza"><strong>Join the MEZA Discord →</strong></a>
+</p>
 
-## What is included
+## Overview
 
-- C++ source code, Visual Studio solution, CMake project, UI assets, fonts, and
-  required build package references.
-- `config.example.ini` as a safe configuration template.
+MEZA Open Source contains the native C++ user-interface, rendering, menu
+configuration, assets, fonts, and Visual Studio/CMake build setup used by the
+project. It is prepared for developers who want to inspect, extend, or learn
+from the Windows UI and rendering architecture.
 
-## What is intentionally excluded
+<p align="center">
+  <img src="assets/github-showcase.png" alt="MEZA interface showcase" width="900" />
+</p>
 
-- KeyAuth code, application identifiers, owner IDs, license keys, saved
-  accounts, runtime configuration, release binaries, diagnostics, logs, and
-  archived builds.
+## Included
 
-The `open_auth` adapter is a compile-safe boundary. It does not authenticate a
-user and it does not bypass authentication. Replace it only with an
-authentication provider that you own and are authorized to use.
+- Native DirectX 9 UI and rendering source
+- C++ project sources, assets, fonts, and resource definitions
+- `meza.sln` for Visual Studio and `CMakeLists.txt` for CMake
+- A safe `config.example.ini` template
+- A custom MEZA Windows application icon
+
+## Intentionally excluded
+
+This public package does **not** contain private authentication code,
+application identifiers, owner IDs, license keys, saved accounts, local
+configuration, release binaries, diagnostic logs, or archived builds.
+
+`open_auth/open_auth_gate.h` is an explicit public boundary. It does not
+authenticate users and does not bypass authentication. Connect only an
+authentication provider you own and are authorized to use before distributing a
+build.
 
 ## Build
 
 1. Install Visual Studio with **Desktop development with C++** and the Windows SDK.
-2. Open `TRAY.sln` and select `Release | x64`.
-3. Build the solution. The output remains in this folder's `dist` directory.
+2. Open `meza.sln`.
+3. Choose `Release | x64`.
+4. Select **Build Solution**.
 
-Do not commit `config.ini`, generated binaries, logs, or user data. The included
-`.gitignore` already excludes them.
+After a successful build, Visual Studio creates:
+
+```text
+dist\x64\Release\MEZA.exe
+```
+
+The repository intentionally ignores generated binaries. A fresh GitHub clone
+must be built locally before it can be run.
+
+## Community
+
+Questions, previews, and community discussion: **[discord.gg/meza](https://discord.gg/meza)**
+
+## Repository hygiene
+
+Do not commit `config.ini`, generated binaries, logs, dumps, or user data. The
+included `.gitignore` is configured to keep those files out of Git.

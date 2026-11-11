@@ -41,3 +41,6 @@ keyauth/
 .env.*
 *.key
 *.secret
+
+# Local unpacked copies; do not publish nested workspaces by accident
+meza Cs2 External/

@@ -19,8 +19,8 @@ config.ini
 third_party/
 
 # Generated build and release artifacts
-Release/
-Archive/
+/Release/
+/Archive/
 *.exe
 *.dll
 *.pdb
@@ -44,3 +44,9 @@ keyauth/
 
 # Local unpacked copies; do not publish nested workspaces by accident
 meza Cs2 External/
+
+# Official DirectX SDK build dependencies required by a fresh source clone.
+# These are dependencies, not generated MEZA release artifacts.
+!packages/Microsoft.DXSDK.D3DX.9.29.952.8/build/native/release/lib/x64/d3dx9.lib
+!packages/Microsoft.DXSDK.D3DX.9.29.952.8/build/native/release/bin/x64/D3DX9_43.dll
+!packages/Microsoft.DXSDK.D3DX.9.29.952.8/build/native/release/bin/x64/D3DCompiler_43.dll
